@@ -42,7 +42,7 @@ def decode(hexcode):
 
 def hide(filename, message):
     img = Image.open(filename)
-    binary = str2bin(message) + '1001111111111110'
+    binary = str2bin(message) + '1111111111111110'
     if img.mode in ('RGBA'):
         img = img.convert('RGBA')
         datas = img.getdata()
@@ -62,7 +62,7 @@ def hide(filename, message):
             else:
                 newData.append(item)
         img.putdata(newData)
-        img.save("1"+filename, "JPEG")
+        img.save("1"+filename, "PNG")
         return "Completed!"
 
     return "Incorrect Image Mode, Couldn't Hide"

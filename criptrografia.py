@@ -1,9 +1,10 @@
 # Hiding Text in an image
 
-from PIL import Image
 import binascii
-import optparse
 import codecs
+import optparse
+
+from PIL import Image
 
 
 def rgb2hex(r, g, b):
@@ -62,7 +63,7 @@ def hide(filename, message):
             else:
                 newData.append(item)
         img.putdata(newData)
-        img.save("1"+filename, "PNG")
+        img.save("1" + filename, "PNG")
         return "Completed!"
 
     return "Incorrect Image Mode, Couldn't Hide"
